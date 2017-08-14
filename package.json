@@ -48,7 +48,9 @@
     "test": "node scripts/test.js --env=jsdom"
   },
   "devDependencies": {
-    "react-router-dom": "^4.1.2"
+    "node-sass": "^4.5.3",
+    "react-router-dom": "^4.1.2",
+    "sass-loader": "^6.0.6"
   },
   "jest": {
     "collectCoverageFrom": [
