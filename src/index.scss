@@ -9,19 +9,16 @@ body {
   padding: 0 0 100px;
 
   &>div{
-    border: 3px solid gold;
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
     min-height: 100%;
 
     &>div {
-      border: 3px solid green;
       box-sizing: border-box;
       flex-grow: 1;
       min-height: 100%;
       display: flex;
     }
   }
-
 }
