@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './Main.scss'
 
 import Logo from '../components/Main/Logo';
 import Search from '../components/Main/Search';
