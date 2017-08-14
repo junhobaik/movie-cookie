@@ -15,8 +15,11 @@
     .logo {
       border: 2px solid blue;
       box-sizing: border-box;
-      min-height: 7rem;
       width: 100%;
+
+      img {
+        width: 50%;
+      }
     }
 
     .search {
