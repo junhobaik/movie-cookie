@@ -8,9 +8,11 @@ import Search from '../components/Main/Search';
 class Main extends Component {
     render() {
         return (
-            <div className="Main">
-                <Logo/>
-                <Search/>
+            <div className="main">
+                <div className="main-wrap">
+                    <Logo/>
+                    <Search/>
+                </div>
             </div>
         );
     }

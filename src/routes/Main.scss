@@ -1,0 +1,27 @@
+.main{
+  align-items: center;
+  border: 2px solid red;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  min-height: 100%;
+  padding-bottom: 5rem;
+  width: 100%;
+
+  .main-wrap{
+    text-align: center;
+    width: 100%;
+
+    .logo {
+      border: 2px solid blue;
+      box-sizing: border-box;
+      min-height: 7rem;
+      width: 100%;
+    }
+
+    .search {
+      border: 2px solid blue;
+      box-sizing: border-box;
+    }
+  }
+}
