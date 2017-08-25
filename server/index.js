@@ -3,6 +3,24 @@ const app = express();
 const portNumber = 4000;
 const cheerio = require('cheerio-httpcli');
 
+//MySQL
+const mysqlConfig = require("../config/db/mysql.json");
+const mysql = require('mysql');
+const connection = mysql.createConnection({
+    host : mysqlConfig.host,
+    user : mysqlConfig.user,
+    password : mysqlConfig.password,
+    database : mysqlConfig.database
+});
+connection.connect(function (err) {
+    if (err) {
+        console.log("! mysql connection error");
+        console.log(err);
+        throw err;
+    } else {
+        console.log("* mysql connection success");
+    }
+});
 
 /****************************************************************************************/
 
@@ -476,5 +494,5 @@ const naverSearch = (where, searchWord) => {
 
 
 app.listen(portNumber, function() {
-    //console.log('\n> Server Start Port Number : ' + portNumber + "\n");
+    console.log('\n* Server Start Port Number : ' + portNumber);
 });
