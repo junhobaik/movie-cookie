@@ -2,6 +2,9 @@ const express = require('express');
 const app = express();
 const portNumber = 4000;
 const cheerio = require('cheerio-httpcli');
+const morgan = require('morgan');
+const bodyParser = require('body-parser');
+app.use(morgan('dev'));
 
 //MySQL
 const mysqlConfig = require("../config/db/mysql.json");
@@ -21,6 +24,7 @@ connection.connect(function (err) {
         console.log("* mysql connection success");
     }
 });
+
 
 /****************************************************************************************/
 
@@ -492,6 +496,22 @@ const naverSearch = (where, searchWord) => {
 
 /****************************************************************************************/
 
+app.use('/', express.static(__dirname + '/../../build'));
+
+app.get('/search', function(req,res){
+    const param = req.query.movie;
+    console.log("> param is " + param);
+
+    connection.query('select * from movies where title=?', [param], function(err, rows){
+        if (err) throw err;
+        else if (rows.length){
+            console.log(rows);
+            res.send("DB 있음");
+        }else{
+            res.send("DB 없음");
+        }
+    });
+});
 
 app.listen(portNumber, function() {
     console.log('\n* Server Start Port Number : ' + portNumber);
