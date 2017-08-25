@@ -62,3 +62,6 @@ typings/
 
 #intelliJ
 .idea/
+
+#db
+/config/db
