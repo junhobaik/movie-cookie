@@ -20,7 +20,7 @@
 
     .search {
 
-      &>div{
+      &>form>div{
         width: 70% !important;
       }
     }
@@ -42,7 +42,7 @@
 
       .search {
 
-        &>div{
+        &>form>div{
           width: 30% !important;
         }
       }
